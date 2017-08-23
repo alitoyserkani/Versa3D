@@ -1,0 +1,4 @@
+Things To Do:
+add xml functionality to main application
+
+change shader files based on stl file itself, no fixed shaders.

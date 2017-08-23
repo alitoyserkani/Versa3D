@@ -1,0 +1,125 @@
+#include "layerdraw.h"
+#include "qpainter.h"
+//#include <QSvgRenderer>
+//#include <QSvgWidget>
+#include <QFile>
+#include <QtXml>
+
+LayerDraw::LayerDraw(QWidget *parent) :
+    QWidget(parent)
+{
+//    QPalette pal = palette();
+//    pal.setColor(QPalette::Background, Qt::blue);
+    parent->setAutoFillBackground(true);
+    parent->setPalette(QPalette(QColor(Qt::gray)));
+
+    hasLayersLoaded = false;
+
+}
+
+LayerDraw::~LayerDraw() {
+
+}
+
+//TODO: Scaling layers based on their dimensions. Add scaling variable to be used in rendering equation.
+
+void LayerDraw::paintEvent(QPaintEvent * e)
+{
+
+    //TODO: load svg's only after stl has been loaded, don't run this code otherwise
+    //TODO: get correct tranformation based on size of part
+    //TODO be able to translate part in build space machine
+    if (hasLayersLoaded) {
+        QPainter painter(this);
+        painter.scale(10,10);
+        painter.translate(7.5,7.5);
+
+        QPen linePen;
+        linePen.setWidthF(0.25);
+        linePen.setColor(Qt::black);
+        linePen.setJoinStyle(Qt::MiterJoin);
+        painter.setPen(linePen);
+
+        QBrush fillBrush;
+        fillBrush.setColor(Qt::blue);
+        fillBrush.setStyle(Qt::SolidPattern);
+        QPainterPath path;
+        //Make polygon
+
+
+        for (int i = 0; i < layerInfoList.at(currLayer-1).size(); i++) {
+
+            path.addPolygon(layerInfoList.at(currLayer-1).at(i));
+
+            painter.fillPath(path,fillBrush);
+            painter.drawPolygon(layerInfoList.at(currLayer-1).at(i));
+        }
+
+    } else {
+        //TODO, add text saying nothing has been loaded
+    }
+
+
+}
+
+bool LayerDraw::loadData(QString SVGfilePath)
+{
+    QFile file(SVGfilePath);
+
+    QDomDocument document;
+
+    //Check if file is valid
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug() << "File open failed";
+        return false;;
+    } else {
+        //add file contents to QDomDocument
+        if (!document.setContent(&file)) {
+            qDebug() << "Document load failed";
+            return false;
+        }
+        file.close();
+    }
+
+    QDomElement root = document.firstChildElement();
+    QDomNodeList layerNodes = root.childNodes();
+    //QVector<QVector<QList<QPointF>>> shapes;
+    numLayers = layerNodes.count();
+    for (int i = 0; i < layerNodes.count(); i++) {
+
+        QDomNodeList shapesInLayer = layerNodes.at(i).childNodes();
+        QVector<QPolygonF> layerShapes;
+        for (int j = 0; j < shapesInLayer.count(); j++) {
+
+            QString temp = shapesInLayer.at(j).toElement().attribute("points");
+            QPolygonF pointsInShape;
+            QStringList pointsString = temp.split(" ");
+            for (int k = 0; k < pointsString.size(); k++) {
+                QStringList coord = pointsString.at(k).split(",");
+                pointsInShape << QPointF(coord.at(0).toFloat(),coord.at(1).toFloat());
+
+            }
+            layerShapes.push_back(pointsInShape);
+
+
+        }
+        //shapes.push_back(layerShapes);
+        layerInfoList.push_back(layerShapes);
+
+
+    }
+    hasLayersLoaded = true;
+    return true;
+}
+
+bool LayerDraw::saveBitmapImages()
+{
+
+}
+
+int LayerDraw::getNumLayers()
+{
+    return layerInfoList.size();
+}
+
+
