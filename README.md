@@ -8,6 +8,10 @@ Thank you to Matt Keeter (mkeeter) for providing an excellent starting codebase 
 
 ### Current UI
 
+<p align="center">
+  <img src="https://github.com/alitoyserkani/Versa3D/blob/master/info/interfaceScreenShot.png" />
+</p>
+
 ### Development Updates
 
 - Custom slicing and toolpath algorithms based on machine parameters using ML concepts is currently in development inside another private repository. Slic3r is used for now to continue building the desktop application interface.
