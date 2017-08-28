@@ -4,7 +4,7 @@ An intelligent 3D printer slicing software that improves process and machine par
 
 This application is still under development by Ali Toyserkani. Executable versions for macOS, Windows 7+, and Linux distros (Ubuntu & Debian) will be available in mid-late September for free usage. 
 
-Thank you to Matt Keeter (mkeeter) for providing an excellent starting codebase (https://github.com/mkeeter/fstl) to allow me to easily begin on this application.
+Thank you to Matt Keeter (mkeeter) for providing an excellent starting codebase (https://github.com/mkeeter/fstl) to allow me to easily begin on this application, without having to re-implement STL data loading.
 
 ### Current UI
 
