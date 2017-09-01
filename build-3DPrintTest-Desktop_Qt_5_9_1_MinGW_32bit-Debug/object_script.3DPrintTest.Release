@@ -1,0 +1,16 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\backdrop.o
+./release\canvas.o
+./release\glmesh.o
+./release\loader.o
+./release\mesh.o
+./release\layerdraw.o
+./release\qrc_gl.o
+./release\qrc_qt.o
+./release\moc_mainwindow.o
+./release\moc_canvas.o
+./release\moc_loader.o
+./release\moc_layerdraw.o
+);

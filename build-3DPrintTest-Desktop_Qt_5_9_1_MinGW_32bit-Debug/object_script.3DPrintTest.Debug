@@ -1,0 +1,16 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\backdrop.o
+./debug\canvas.o
+./debug\glmesh.o
+./debug\loader.o
+./debug\mesh.o
+./debug\layerdraw.o
+./debug\qrc_gl.o
+./debug\qrc_qt.o
+./debug\moc_mainwindow.o
+./debug\moc_canvas.o
+./debug\moc_loader.o
+./debug\moc_layerdraw.o
+);
