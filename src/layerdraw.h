@@ -18,6 +18,7 @@ public:
     bool saveBitmapImages();
     int getNumLayers();
 
+    // for now, segmentation will happen after the images have been saved
     void segmentImages(QSize buildArea);
 
 protected:
