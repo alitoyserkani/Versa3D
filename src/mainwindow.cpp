@@ -381,6 +381,7 @@ void MainWindow::on_lineEdit_textEdited(const QString &arg1)
 void MainWindow::on_pushButton_clicked()
 {
     qDebug() << ui->svg_viewer->getNumLayers();
+    ui->svg_viewer->saveBitmapImages();
 
     //TODO: don't redo algorithm if machine code has already been generated, prompt user to make sure they want to proceed
 

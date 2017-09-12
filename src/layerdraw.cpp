@@ -4,6 +4,7 @@
 //#include <QSvgWidget>
 #include <QFile>
 #include <QtXml>
+#include <QBitmap>
 
 LayerDraw::LayerDraw(QWidget *parent) :
     QWidget(parent)
@@ -114,7 +115,63 @@ bool LayerDraw::loadData(QString SVGfilePath)
 
 bool LayerDraw::saveBitmapImages()
 {
+    QString fileDef("exImg");
 
+    for (int i = 0; i < layerInfoList.size(); i++) {
+        //inefficent start test
+        QPixmap pixmap(this->rect().size()); // this needs to be the appropritate size for machine
+        QBitmap bitmap(this->rect().size());
+        bitmap.clear();
+
+        pixmap.fill(Qt::color0);
+        QPainter painter(&pixmap);
+        //BAD way, remove ASAPPPPPP
+
+        painter.scale(10,10);
+        painter.translate(7.5,7.5);
+
+        QPen linePen;
+        linePen.setWidthF(0.25);
+        linePen.setColor(Qt::black);
+        linePen.setJoinStyle(Qt::MiterJoin);
+        painter.setPen(linePen);
+
+        QRadialGradient radialGrad(QPointF(100, 100), 100);
+        radialGrad.setColorAt(0, Qt::color0);
+        radialGrad.setColorAt(0.5, Qt::blue);
+        radialGrad.setColorAt(1, Qt::green);
+        QBrush fillBrush(radialGrad);
+        fillBrush.setColor(Qt::black);
+        fillBrush.setStyle(Qt::RadialGradientPattern);
+        QPainterPath path;
+        //Make polygon
+
+
+        for (int j = 0; j < layerInfoList.at(i).size(); j++) {
+
+            path.addPolygon(layerInfoList.at(i).at(j));
+
+            painter.fillPath(path,fillBrush);
+            painter.drawPolygon(layerInfoList.at(i).at(j));
+        }
+
+        painter.end();
+
+//        std::stringstream ss;
+//        ss << "touch ../../../../files/BMP_Out/" << fileDef.toUtf8().constData() << QString::number(i).toUtf8().constData() << ".png";
+//        system(ss.str().c_str());
+//        QFile image("../../../../files/BMP_Out/" + fileDef + QString::number(i));
+//        image.open(QIODevice::ReadWrite);
+
+
+        //qDebug() << pixmap.toImage().save(QString("../../../../files/BMP_Out/hello") + QString::number(i) + ".png","PNG",100); // add statment to return false from function if QPixmap::save doesnt work
+        bitmap.convertFromImage(pixmap.toImage());
+        bitmap.save(QString("../../../../files/BMP_Out/hello") + QString::number(i) + ".bmp");
+      //  image.close();
+    }
+    qDebug() << this->rect().size() << "Export Complete";
+
+    return true;
 }
 
 int LayerDraw::getNumLayers()
