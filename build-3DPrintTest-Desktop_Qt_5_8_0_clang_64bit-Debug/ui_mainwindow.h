@@ -40,6 +40,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     Canvas *stl_viewer;
     QVBoxLayout *verticalLayout_3;
+    QPushButton *pushButton;
     QSplitter *splitter;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
@@ -55,9 +56,9 @@ public:
     QSlider *verticalSlider;
     QTabWidget *tabWidget_2;
     QWidget *machine_tab;
+    QLabel *systemImage;
     QWidget *tab_3;
     QWidget *tab_4;
-    QPushButton *pushButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -91,6 +92,11 @@ public:
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        verticalLayout_3->addWidget(pushButton);
+
         splitter = new QSplitter(centralWidget);
         splitter->setObjectName(QStringLiteral("splitter"));
         splitter->setOrientation(Qt::Vertical);
@@ -170,7 +176,12 @@ public:
         tabWidget_2->setTabShape(QTabWidget::Rounded);
         machine_tab = new QWidget();
         machine_tab->setObjectName(QStringLiteral("machine_tab"));
+        systemImage = new QLabel(machine_tab);
+        systemImage->setObjectName(QStringLiteral("systemImage"));
+        systemImage->setGeometry(QRect(10, 10, 61, 51));
         tabWidget_2->addTab(machine_tab, QString());
+        systemImage->raise();
+        pushButton->raise();
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
         tabWidget_2->addTab(tab_3, QString());
@@ -180,11 +191,6 @@ public:
         splitter->addWidget(tabWidget_2);
 
         verticalLayout_3->addWidget(splitter);
-
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-
-        verticalLayout_3->addWidget(pushButton);
 
 
         horizontalLayout_2->addLayout(verticalLayout_3);
@@ -218,14 +224,15 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("MainWindow", "Generate Machine Code", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_1), QApplication::translate("MainWindow", "Slice", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Raster", Q_NULLPTR));
         layerNum_label->setText(QApplication::translate("MainWindow", "Layer #", Q_NULLPTR));
         lineEdit->setText(QString());
+        systemImage->setText(QString());
         tabWidget_2->setTabText(tabWidget_2->indexOf(machine_tab), QApplication::translate("MainWindow", "Machine", Q_NULLPTR));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_3), QApplication::translate("MainWindow", "Machine Settings", Q_NULLPTR));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_4), QApplication::translate("MainWindow", "Page", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("MainWindow", "Generate Machine Code", Q_NULLPTR));
     } // retranslateUi
 
 };

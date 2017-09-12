@@ -7,4 +7,9 @@ Remove Slic3r Dependency
 add image segmentation
 Make scripting engine and create example for XML output
 Ensure that overall architechture is kept up to standard and that it will allow for scalibility of features
+
 -For architechture, each machine will have a list of different processes which are dictated by the scripting engine
+
+IMPORTANT:
+scaling of part slices in PaintEngine area and useful IS A MUST
+

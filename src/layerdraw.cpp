@@ -179,4 +179,12 @@ int LayerDraw::getNumLayers()
     return layerInfoList.size();
 }
 
+void LayerDraw::segmentImages(QSize buildArea)
+{
+    //TO-DO: with given build size, slice images and add correct filename to be identified by the printhead buffer
+    //Important: segmentImages should be called within the LayerDraw class (change to private/protected), for effieciecy
+
+=
+}
+
 

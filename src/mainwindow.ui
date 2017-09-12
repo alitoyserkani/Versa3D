@@ -42,6 +42,13 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>Generate Machine Code</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QSplitter" name="splitter">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -159,6 +166,21 @@
             <attribute name="title">
              <string>Machine</string>
             </attribute>
+            <widget class="QLabel" name="systemImage">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>10</y>
+               <width>61</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+            <zorder>systemImage</zorder>
+            <zorder>pushButton</zorder>
            </widget>
            <widget class="QWidget" name="tab_3">
             <attribute name="title">
@@ -171,13 +193,6 @@
             </attribute>
            </widget>
           </widget>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton">
-          <property name="text">
-           <string>Generate Machine Code</string>
-          </property>
          </widget>
         </item>
        </layout>

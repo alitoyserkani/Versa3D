@@ -29,10 +29,17 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    setWindowTitle("3DPrint");
+    setWindowTitle("Versa3D");
     setAcceptDrops(true);
 
     setStyleSheet("background-color: gray"); //change background to something suitable later
+
+
+    // need to scale image to correct ratio and better formatting --> WANT TO PROGRAMMICALLY ADD INFO depending on machine settings (barebones for now)
+    ui->systemImage->setPixmap(QPixmap("../../../../info/machineInfo/binderjet_inhouse_system.jpg"));
+
+
+
 
 //    QGLFormat format;
 //    format.setVersion(2, 1);
