@@ -28,6 +28,8 @@ private:
     QVector<QVector<QPolygonF>> layerInfoList;
     bool hasLayersLoaded;
 
+    void drawBackground(); // add build settings into parameters later
+
 };
 
 

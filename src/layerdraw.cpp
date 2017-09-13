@@ -30,6 +30,8 @@ void LayerDraw::paintEvent(QPaintEvent * e)
     //TODO: load svg's only after stl has been loaded, don't run this code otherwise
     //TODO: get correct tranformation based on size of part
     //TODO be able to translate part in build space machine
+    drawBackground();
+
     if (hasLayersLoaded) {
         QPainter painter(this);
         painter.scale(10,10);
@@ -44,12 +46,14 @@ void LayerDraw::paintEvent(QPaintEvent * e)
         QBrush fillBrush;
         fillBrush.setColor(Qt::blue);
         fillBrush.setStyle(Qt::SolidPattern);
+
         QPainterPath path;
         //Make polygon
 
 
         for (int i = 0; i < layerInfoList.at(currLayer-1).size(); i++) {
 
+            //why is this step even here
             path.addPolygon(layerInfoList.at(currLayer-1).at(i));
 
             painter.fillPath(path,fillBrush);
@@ -184,6 +188,33 @@ void LayerDraw::segmentImages(QSize buildArea)
 {
     //TO-DO: with given build size, slice images and add correct filename to be identified by the printhead buffer
     //Important: segmentImages should be called within the LayerDraw class (change to private/protected), for effieciecy
+
+
+
+
+}
+
+void LayerDraw::drawBackground()
+{
+    //Draws build area from top view
+
+    QPainter backgroundPainter(this);
+    // add scale and translation but must be saved in a variable for ease of use
+
+
+    QPen backgroundLinePen;
+    backgroundLinePen.setWidth(1);
+    backgroundLinePen.setColor(Qt::green);
+    backgroundLinePen.setJoinStyle(Qt::MiterJoin);
+    backgroundPainter.setPen(backgroundLinePen);
+
+    QPainterPath backgroundPath;
+    //backgroundPath.addRect(30,30,100,100);
+    backgroundPainter.drawRect(30,30,100,100);
+
+    //change this to another qpainter object
+    backgroundPainter.drawText(30,20, "Size: 600x600");
+
 
 
 
