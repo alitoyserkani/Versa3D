@@ -142,7 +142,7 @@ bool LayerDraw::saveBitmapImages()
         radialGrad.setColorAt(1, Qt::green);
         QBrush fillBrush(radialGrad);
         fillBrush.setColor(Qt::black);
-        fillBrush.setStyle(Qt::RadialGradientPattern);
+        fillBrush.setStyle(Qt::RadialGradientPattern); //this changes this flood fill for now
         QPainterPath path;
         //Make polygon
 
@@ -166,6 +166,7 @@ bool LayerDraw::saveBitmapImages()
 
         //qDebug() << pixmap.toImage().save(QString("../../../../files/BMP_Out/hello") + QString::number(i) + ".png","PNG",100); // add statment to return false from function if QPixmap::save doesnt work
         bitmap.convertFromImage(pixmap.toImage());
+        qDebug() << bitmap.width() << bitmap.height() << bitmap.size();
         bitmap.save(QString("../../../../files/BMP_Out/hello") + QString::number(i) + ".bmp");
       //  image.close();
     }
@@ -184,7 +185,9 @@ void LayerDraw::segmentImages(QSize buildArea)
     //TO-DO: with given build size, slice images and add correct filename to be identified by the printhead buffer
     //Important: segmentImages should be called within the LayerDraw class (change to private/protected), for effieciecy
 
-=
+
+
+
 }
 
 
