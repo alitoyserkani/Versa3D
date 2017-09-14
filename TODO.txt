@@ -12,4 +12,10 @@ Ensure that overall architechture is kept up to standard and that it will allow 
 
 IMPORTANT:
 scaling of part slices in PaintEngine area and useful IS A MUST
+
 having 2D build area in PaintEngine is a must
+
+PROBLEMS:
+
+bitmaps are being duplicated, layer 0 is producing 14000 bitmaps for some reason
+scaling of part in build space is off

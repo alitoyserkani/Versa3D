@@ -51,6 +51,36 @@ void Canvas::view_perspective()
     view_anim(0.25);
 }
 
+float Canvas::getXMin()
+{
+    if (hasFileLoaded) return xMin;
+}
+
+float Canvas::getXMax()
+{
+    if (hasFileLoaded) return xMax;
+}
+
+float Canvas::getYMin()
+{
+    if (hasFileLoaded) return yMin;
+}
+
+float Canvas::getYMax()
+{
+    if (hasFileLoaded) return yMax;
+}
+
+float Canvas::getZMin()
+{
+    if (hasFileLoaded) return zMin;
+}
+
+float Canvas::getZMax()
+{
+    if (hasFileLoaded) return zMax;
+}
+
 void Canvas::load_mesh(Mesh* m, bool is_reload)
 {
     mesh = new GLMesh(m);
@@ -68,7 +98,16 @@ void Canvas::load_mesh(Mesh* m, bool is_reload)
         tilt = 90;
     }
 
+    xMin = m->xmin();
+    xMax = m->xmax();
+    yMin = m->ymin();
+    yMax = m->ymax();
+    zMin = m->zmin();
+    zMax = m->zmax();
+
     update();
+
+    hasFileLoaded = true;
 
     delete m;
 }

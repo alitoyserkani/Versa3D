@@ -46,7 +46,7 @@ void LayerDraw::paintEvent(QPaintEvent * e)
 
         QBrush fillBrush;
         fillBrush.setColor(Qt::blue);
-        fillBrush.setStyle(Qt::SolidPattern);
+        fillBrush.setStyle(Qt::SolidPattern); //once scaling is fixed, the fillBrush Styles can be changed for different infill properties
 
         QPainterPath path;
         //Make polygon
@@ -122,12 +122,11 @@ bool LayerDraw::saveBitmapImages()
 {
     QString fileDef("exImg");
 
-    for (int i = 0; i < layerInfoList.size(); i++) {
+    for (int i = 1; i < layerInfoList.size(); i++) {
         //inefficent start test
-        QPixmap pixmap(this->rect().size()); // this needs to be the appropritate size for machine
-        QBitmap bitmap(this->rect().size());
+        QPixmap pixmap(QSize(615,600)); // this needs to be the appropritate size for machine
+        QBitmap bitmap(QSize(615,600));
         bitmap.clear();
-
         pixmap.fill(Qt::color0);
         QPainter painter(&pixmap);
         //BAD way, remove ASAPPPPPP
@@ -170,12 +169,25 @@ bool LayerDraw::saveBitmapImages()
 
 
         //qDebug() << pixmap.toImage().save(QString("../../../../files/BMP_Out/hello") + QString::number(i) + ".png","PNG",100); // add statment to return false from function if QPixmap::save doesnt work
-        bitmap.convertFromImage(pixmap.toImage());
-        qDebug() << bitmap.width() << bitmap.height() << bitmap.size();
-        bitmap.save(QString("../../../../files/BMP_Out/hello") + QString::number(i) + ".bmp");
+
+        QList<QImage> splitImages = segmentImage(pixmap.toImage(),QSize(615,300));
+
+        qDebug() << splitImages.size();
+        for (int j = 0; j < splitImages.size(); j++) {
+            QBitmap segBitmap(QSize(615,300));
+            segBitmap.clear();
+            segBitmap.convertFromImage(splitImages.at(j));
+            qDebug() << segBitmap.size() << segBitmap.height() << segBitmap.size() << "Layer" << i << "Seg" << j;
+            segBitmap.save(QString("../../../../files/BMP_Out/helloLayer") + QString::number(i) + QString("Seg") + QString::number(j) + ".bmp");
+
+        }
+
+//        bitmap.convertFromImage(pixmap.toImage());
+//        qDebug() << bitmap.width() << bitmap.height() << bitmap.size();
+//        bitmap.save(QString("../../../../files/BMP_Out/hello") + QString::number(i) + ".bmp");
       //  image.close();
     }
-    qDebug() << this->rect().size() << "Export Complete";
+    qDebug() << "Export Complete";
 
     return true;
 }
@@ -185,11 +197,21 @@ int LayerDraw::getNumLayers()
     return layerInfoList.size();
 }
 
-void LayerDraw::segmentImages(QSize buildArea)
+QList<QImage> LayerDraw::segmentImage(QImage image, QSize printArea)
 {
     //TO-DO: with given build size, slice images and add correct filename to be identified by the printhead buffer
     //Important: segmentImages should be called within the LayerDraw class (change to private/protected), for effieciecy
+    //TODO: there may be a scenario where a printhead swath will only be a part of the image that is less than the printHeight. In this case, make an image of same size, but put correct part of image
 
+    int numSplits = image.height() / printArea.height();
+    QImage seg = image.copy(QRect(0,0,615,300));
+    QImage seg2 = image.copy(QRect(0,300,615,300));
+
+    QList<QImage> listSplitImages;
+    listSplitImages.append(seg);
+    listSplitImages.append(seg2);
+
+    return listSplitImages;
 
 
 
@@ -216,11 +238,6 @@ void LayerDraw::drawBackground()
 
     //change this to another qpainter object
     backgroundPainter.drawText(30,20, "Size: 600px X 600px");
-
-
-
-
-
 }
 
 

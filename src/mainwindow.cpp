@@ -347,7 +347,10 @@ bool MainWindow::load_stl(const QString& filename, bool is_reload)
     ui->verticalSlider->setMaximum(ui->svg_viewer->numLayers);
     //draw layers onto svg widget
 
-
+    ui->svg_viewer->meshXMin = ui->stl_viewer->getXMin();
+    ui->svg_viewer->meshXMax = ui->stl_viewer->getXMax();
+    ui->svg_viewer->meshYMin = ui->stl_viewer->getYMin();
+    ui->svg_viewer->meshYMax = ui->stl_viewer->getYMax();
 
     return true;
 }
@@ -391,8 +394,6 @@ void MainWindow::on_pushButton_clicked()
 {
     qDebug() << ui->svg_viewer->getNumLayers();
     ui->svg_viewer->saveBitmapImages();
-
     //TODO: don't redo algorithm if machine code has already been generated, prompt user to make sure they want to proceed
-
 
 }

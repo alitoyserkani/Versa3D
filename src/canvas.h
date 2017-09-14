@@ -26,6 +26,16 @@ public:
     void view_orthographic();
     void view_perspective();
 
+    bool hasFileLoaded = false;
+
+    float getXMin();
+    float getXMax();
+    float getYMin();
+    float getYMax();
+    float getZMin();
+    float getZMax();
+
+
 public slots:
     void set_status(const QString& s);
     void clear_status();
@@ -67,6 +77,10 @@ private:
 
     QPoint mouse_pos;
     QString status;
+
+    float xMin, xMax;
+    float yMin, yMax;
+    float zMin, zMax;
 };
 
 #endif // CANVAS_H
