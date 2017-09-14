@@ -48,6 +48,7 @@ public:
     QWidget *tab_1;
     QHBoxLayout *horizontalLayout_4;
     LayerDraw *svg_viewer;
+    QLabel *thicknessLabel;
     QWidget *tab_2;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
@@ -63,6 +64,7 @@ public:
     QLabel *processLabel;
     QWidget *tab_3;
     QWidget *tab_4;
+    QWidget *tab;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -125,6 +127,12 @@ public:
         svg_viewer->setObjectName(QStringLiteral("svg_viewer"));
         svg_viewer->setMinimumSize(QSize(310, 0));
         svg_viewer->setAutoFillBackground(false);
+        thicknessLabel = new QLabel(svg_viewer);
+        thicknessLabel->setObjectName(QStringLiteral("thicknessLabel"));
+        thicknessLabel->setGeometry(QRect(180, 0, 121, 20));
+        QFont font;
+        font.setPointSize(10);
+        thicknessLabel->setFont(font);
 
         horizontalLayout_4->addWidget(svg_viewer);
 
@@ -143,8 +151,6 @@ public:
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         layerNum_label = new QLabel(layoutWidget);
         layerNum_label->setObjectName(QStringLiteral("layerNum_label"));
-        QFont font;
-        font.setPointSize(10);
         layerNum_label->setFont(font);
 
         verticalLayout->addWidget(layerNum_label);
@@ -209,6 +215,9 @@ public:
         tab_4 = new QWidget();
         tab_4->setObjectName(QStringLiteral("tab_4"));
         tabWidget_2->addTab(tab_4, QString());
+        tab = new QWidget();
+        tab->setObjectName(QStringLiteral("tab"));
+        tabWidget_2->addTab(tab, QString());
         splitter->addWidget(tabWidget_2);
 
         verticalLayout_3->addWidget(splitter);
@@ -246,16 +255,18 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainWindow", "Generate Machine Code", Q_NULLPTR));
+        thicknessLabel->setText(QApplication::translate("MainWindow", "Layer Thickness:", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_1), QApplication::translate("MainWindow", "Slice", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Raster", Q_NULLPTR));
         layerNum_label->setText(QApplication::translate("MainWindow", "Layer #", Q_NULLPTR));
         lineEdit->setText(QString());
         systemImage->setText(QString());
         machineLabel->setText(QApplication::translate("MainWindow", "Machine: MSAM Research Platform", Q_NULLPTR));
-        processLabel->setText(QApplication::translate("MainWindow", "Process: Hybrid AM Process", Q_NULLPTR));
+        processLabel->setText(QApplication::translate("MainWindow", "Process: Hybrid Silicone AM ", Q_NULLPTR));
         tabWidget_2->setTabText(tabWidget_2->indexOf(machine_tab), QApplication::translate("MainWindow", "Machine", Q_NULLPTR));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_3), QApplication::translate("MainWindow", "Machine Settings", Q_NULLPTR));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_4), QApplication::translate("MainWindow", "Page", Q_NULLPTR));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_4), QApplication::translate("MainWindow", "Output", Q_NULLPTR));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab), QApplication::translate("MainWindow", "Scripting", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -182,6 +182,14 @@ bool LayerDraw::saveBitmapImages()
 
         }
 
+//        QFile templateFile("../../../../files/Templates/templateHyrbrid.xml");
+//        templateFile.open(QIODevice::ReadOnly);
+//        QString contents;
+//        QTextStream s1(&file,QIODevice::ReadOnly);
+//        contents.append(s1.readAll());
+
+//        contents.indexOf
+
 //        bitmap.convertFromImage(pixmap.toImage());
 //        qDebug() << bitmap.width() << bitmap.height() << bitmap.size();
 //        bitmap.save(QString("../../../../files/BMP_Out/hello") + QString::number(i) + ".bmp");
@@ -224,7 +232,7 @@ void LayerDraw::drawBackground()
     QPainter backgroundPainter(this);
     // add scale and translation but must be saved in a variable for ease of use
     backgroundPainter.scale(0.5,0.5);
-    backgroundPainter.translate(5,5);
+    backgroundPainter.translate(5,10);
 
     QPen backgroundLinePen;
     backgroundLinePen.setWidth(2);
@@ -232,12 +240,20 @@ void LayerDraw::drawBackground()
     backgroundLinePen.setJoinStyle(Qt::MiterJoin);
     backgroundPainter.setPen(backgroundLinePen);
 
-    QPainterPath backgroundPath;
+    //QPainterPath backgroundPath;
     //backgroundPath.addRect(30,30,100,100);
     backgroundPainter.drawRect(0,0,600,600);
 
     //change this to another qpainter object
     backgroundPainter.drawText(30,20, "Size: 600px X 600px");
+
+    QPainter infoPainter(this);
+    QPen infoPen;
+    infoPen.setWidth(1);
+    infoPen.setColor(Qt::black);
+    infoPen.setJoinStyle(Qt::MiterJoin);
+    infoPainter.setPen(infoPen);
+    infoPainter.drawText(10,350, QString("XMin:") + QString::number(meshXMin) + "  " + QString("XMax:") + QString::number(meshXMax));
 }
 
 

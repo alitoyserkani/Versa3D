@@ -18,4 +18,5 @@ having 2D build area in PaintEngine is a must
 PROBLEMS:
 
 bitmaps are being duplicated, layer 0 is producing 14000 bitmaps for some reason
+Rastering at a certain sequence of layers or layer k
 scaling of part in build space is off

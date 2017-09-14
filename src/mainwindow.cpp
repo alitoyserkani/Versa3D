@@ -293,7 +293,6 @@ void MainWindow::on_reload()
 
 bool MainWindow::load_stl(const QString& filename, bool is_reload)
 {
-    qInfo() << "Hi everyone";
     if (!open_action->isEnabled())  return false;
     ui->stl_viewer->set_status("Loading " + filename); //change to application status bar
 
@@ -336,11 +335,12 @@ bool MainWindow::load_stl(const QString& filename, bool is_reload)
     // TODO: See if system() can be replaced with QProcess, QProcess may be needed to track the completion of Slic3r
     //Clearing svg files after
     std::stringstream ss;
-    ss << "../../../../tools/Slic3r.app/Contents/MacOS/slic3r --export-svg " << filename.toUtf8().constData() << " --output ../../../../files/SVG_Files";
+    qDebug() << filename;
+    ss << "../../../../tools/Slic3r.app/Contents/MacOS/slic3r --export-svg " << filename.toUtf8().constData() << " --layer-height 0.1 --output ../../../../files/SVG_Files";
     system(ss.str().c_str()); //may automatically wait for completion
     //NOTE : This need to be changed for the deployable version and stored in proper directories
-    qDebug() << filename.endsWith(".stl");
-    //system("../../../../tools/Slic3r.app/Contents/MacOS/slic3r --export-svg ../../../../test/CAD_tests/testSphere.stl --output ../../../../files/SVG_Files");
+    qDebug() << filename.endsWith(".stl"); //use this later
+
     ui->svg_viewer->loadData("../../../../files/SVG_Files/testEggShape.svg");
     ui->svg_viewer->currLayer = ui->lineEdit->text().toInt();
     ui->svg_viewer->update();
@@ -351,6 +351,9 @@ bool MainWindow::load_stl(const QString& filename, bool is_reload)
     ui->svg_viewer->meshXMax = ui->stl_viewer->getXMax();
     ui->svg_viewer->meshYMin = ui->stl_viewer->getYMin();
     ui->svg_viewer->meshYMax = ui->stl_viewer->getYMax();
+
+    ui->thicknessLabel->setText("Layer Thickness: 0.1 mm");
+    qDebug() << ui->stl_viewer->getZMin() << ui->stl_viewer->getZMax();
 
     return true;
 }
