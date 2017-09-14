@@ -76,6 +76,12 @@
                <layout class="QHBoxLayout" name="horizontalLayout_4">
                 <item>
                  <widget class="LayerDraw" name="svg_viewer" native="true">
+                  <property name="minimumSize">
+                   <size>
+                    <width>310</width>
+                    <height>0</height>
+                   </size>
+                  </property>
                   <property name="autoFillBackground">
                    <bool>false</bool>
                   </property>
@@ -179,8 +185,32 @@
               <string/>
              </property>
             </widget>
-            <zorder>systemImage</zorder>
-            <zorder>pushButton</zorder>
+            <widget class="QWidget" name="">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>10</y>
+               <width>216</width>
+               <height>40</height>
+              </rect>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <widget class="QLabel" name="machineLabel">
+                <property name="text">
+                 <string>Machine: MSAM Research Platform</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="processLabel">
+                <property name="text">
+                 <string>Process: Hybrid AM Process</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
            </widget>
            <widget class="QWidget" name="tab_3">
             <attribute name="title">

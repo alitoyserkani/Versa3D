@@ -37,6 +37,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // need to scale image to correct ratio and better formatting --> WANT TO PROGRAMMICALLY ADD INFO depending on machine settings (barebones for now)
     ui->systemImage->setPixmap(QPixmap("../../../../info/machineInfo/binderjet_inhouse_system.jpg"));
+    ui->systemImage->setScaledContents(true);
+    ui->systemImage->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
 
 
 

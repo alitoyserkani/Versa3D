@@ -57,6 +57,10 @@ public:
     QTabWidget *tabWidget_2;
     QWidget *machine_tab;
     QLabel *systemImage;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout_4;
+    QLabel *machineLabel;
+    QLabel *processLabel;
     QWidget *tab_3;
     QWidget *tab_4;
     QMenuBar *menuBar;
@@ -119,6 +123,7 @@ public:
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
         svg_viewer = new LayerDraw(tab_1);
         svg_viewer->setObjectName(QStringLiteral("svg_viewer"));
+        svg_viewer->setMinimumSize(QSize(310, 0));
         svg_viewer->setAutoFillBackground(false);
 
         horizontalLayout_4->addWidget(svg_viewer);
@@ -179,9 +184,25 @@ public:
         systemImage = new QLabel(machine_tab);
         systemImage->setObjectName(QStringLiteral("systemImage"));
         systemImage->setGeometry(QRect(10, 10, 61, 51));
+        widget = new QWidget(machine_tab);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(90, 10, 216, 40));
+        verticalLayout_4 = new QVBoxLayout(widget);
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
+        machineLabel = new QLabel(widget);
+        machineLabel->setObjectName(QStringLiteral("machineLabel"));
+
+        verticalLayout_4->addWidget(machineLabel);
+
+        processLabel = new QLabel(widget);
+        processLabel->setObjectName(QStringLiteral("processLabel"));
+
+        verticalLayout_4->addWidget(processLabel);
+
         tabWidget_2->addTab(machine_tab, QString());
-        systemImage->raise();
-        pushButton->raise();
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
         tabWidget_2->addTab(tab_3, QString());
@@ -230,6 +251,8 @@ public:
         layerNum_label->setText(QApplication::translate("MainWindow", "Layer #", Q_NULLPTR));
         lineEdit->setText(QString());
         systemImage->setText(QString());
+        machineLabel->setText(QApplication::translate("MainWindow", "Machine: MSAM Research Platform", Q_NULLPTR));
+        processLabel->setText(QApplication::translate("MainWindow", "Process: Hybrid AM Process", Q_NULLPTR));
         tabWidget_2->setTabText(tabWidget_2->indexOf(machine_tab), QApplication::translate("MainWindow", "Machine", Q_NULLPTR));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_3), QApplication::translate("MainWindow", "Machine Settings", Q_NULLPTR));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_4), QApplication::translate("MainWindow", "Page", Q_NULLPTR));

@@ -34,6 +34,7 @@ void LayerDraw::paintEvent(QPaintEvent * e)
 
     if (hasLayersLoaded) {
         QPainter painter(this);
+
         painter.scale(10,10);
         painter.translate(7.5,7.5);
 
@@ -200,20 +201,21 @@ void LayerDraw::drawBackground()
 
     QPainter backgroundPainter(this);
     // add scale and translation but must be saved in a variable for ease of use
-
+    backgroundPainter.scale(0.5,0.5);
+    backgroundPainter.translate(5,5);
 
     QPen backgroundLinePen;
-    backgroundLinePen.setWidth(1);
+    backgroundLinePen.setWidth(2);
     backgroundLinePen.setColor(Qt::green);
     backgroundLinePen.setJoinStyle(Qt::MiterJoin);
     backgroundPainter.setPen(backgroundLinePen);
 
     QPainterPath backgroundPath;
     //backgroundPath.addRect(30,30,100,100);
-    backgroundPainter.drawRect(30,30,100,100);
+    backgroundPainter.drawRect(0,0,600,600);
 
     //change this to another qpainter object
-    backgroundPainter.drawText(30,20, "Size: 600x600");
+    backgroundPainter.drawText(30,20, "Size: 600px X 600px");
 
 
 
