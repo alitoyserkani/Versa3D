@@ -20,3 +20,7 @@ PROBLEMS:
 bitmaps are being duplicated, layer 0 is producing 14000 bitmaps for some reason
 Rastering at a certain sequence of layers or layer k
 scaling of part in build space is off
+
+
+NOTE: when running the application outside of the IDE, the "system()" command does not work; remove change to QProcess, probably a flag from OSX to try to hack into the system :)
+
