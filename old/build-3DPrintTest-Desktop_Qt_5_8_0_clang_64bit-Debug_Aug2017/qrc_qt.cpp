@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 static const unsigned char qt_resource_data[] = {
-  // /Users/alitoyserkani/Desktop/Projects/Versa3D/src/qt/style.qss
+  // /Users/alitoyserkani/Desktop/Work/Additive_Manufacturing_Laboratory/Software/STL_to_XML_GUI/3DPrint_GUI/3DPrintTest/src/qt/style.qss
   0x0,0x0,0x0,0x3c,
   0x51,
   0x57,0x69,0x64,0x67,0x65,0x74,0x20,0x7b,0xa,0x20,0x20,0x20,0x20,0x62,0x61,0x63,

@@ -13,9 +13,9 @@ MAKEFILE      = Makefile
 CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB
-CFLAGS        = -pipe -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_CFLAGS) -g -Wall -W -fPIC $(DEFINES)
-CXXFLAGS      = -pipe -stdlib=libc++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_CFLAGS) -g -std=gnu++11 -Wall -W -fPIC $(DEFINES)
-INCPATH       = -I../src -I. -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtOpenGL.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/macx-clang -F/Users/alitoyserkani/Qt/5.8/clang_64/lib
+CFLAGS        = -pipe -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_CFLAGS) -g -Wall -W -fPIC $(DEFINES)
+CXXFLAGS      = -pipe -stdlib=libc++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_CFLAGS) -g -std=gnu++11 -Wall -W -fPIC $(DEFINES)
+INCPATH       = -I../src -I. -I../../../../Qt/5.8/clang_64/lib/QtOpenGL.framework/Headers -I../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers -I../../../../Qt/5.8/clang_64/lib/QtXml.framework/Headers -I../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I../../../../Qt/5.8/clang_64/mkspecs/macx-clang -F/Users/alitoyserkani/Qt/5.8/clang_64/lib
 QMAKE         = /Users/alitoyserkani/Qt/5.8/clang_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -33,9 +33,9 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = 3DPrintTest1.0.0
-DISTDIR = /Users/alitoyserkani/Desktop/Work/Additive_Manufacturing_Laboratory/Software/STL_to_XML_GUI/3DPrint_GUI/3DPrintTest/build-3DPrintTest-Desktop_Qt_5_8_0_clang_64bit-Debug/.tmp/3DPrintTest1.0.0
+DISTDIR = /Users/alitoyserkani/Desktop/Projects/Versa3D/build-3DPrintTest-Desktop_Qt_5_8_0_clang_64bit-Debug/.tmp/3DPrintTest1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-LFLAGS        = -headerpad_max_install_names -stdlib=libc++ -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_LFLAGS) -Wl,-rpath,/Users/alitoyserkani/Qt/5.8/clang_64/lib
+LFLAGS        = -headerpad_max_install_names -stdlib=libc++ -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_LFLAGS) -Wl,-rpath,/Users/alitoyserkani/Qt/5.8/clang_64/lib
 LIBS          = $(SUBLIBS) -F/Users/alitoyserkani/Qt/5.8/clang_64/lib -framework QtOpenGL -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework QtXml -framework OpenGL -framework AGL 
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
@@ -75,182 +75,181 @@ OBJECTS       = main.o \
 		moc_canvas.o \
 		moc_loader.o \
 		moc_layerdraw.o
-DIST          = /Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/qdevice.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/device_config.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/unix.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/mac.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/macx.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/sanitize.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/gcc-base.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/gcc-base-mac.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/clang.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/clang-mac.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/qconfig.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dcore.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dcore_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dextras.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dextras_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dinput.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dinput_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dlogic.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dlogic_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquick.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquick_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickextras.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickextras_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickinput.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickinput_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickrender.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickrender_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3drender.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3drender_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_accessibility_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_bluetooth.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_cgl_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_charts.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_charts_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_clucene_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_concurrent.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_core.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_core_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_datavisualization.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_datavisualization_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_dbus.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_dbus_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_designer.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_designer_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_fb_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_gamepad.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_gamepad_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_graphics_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_gui.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_gui_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_help.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_help_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_location.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_location_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_macextras.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_macextras_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimedia.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_network.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_network_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_networkauth.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_networkauth_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_nfc.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_nfc_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_opengl.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_opengl_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_openglextensions.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_packetprotocol_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_positioning.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_positioning_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_printsupport.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_purchasing.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_purchasing_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qml.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qml_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmldebug_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmltest.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quick.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quick_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickcontrols2.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_script.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_script_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_scripttools.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_scxml.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_scxml_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_sensors.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_sensors_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialbus.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialbus_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialport.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialport_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_sql.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_sql_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_svg.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_svg_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_testlib.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_testlib_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_texttospeech.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_texttospeech_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_theme_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_uiplugin.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_uitools.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_uitools_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webchannel.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webchannel_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webengine.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webengine_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecore.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecore_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginewidgets.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_websockets.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_websockets_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webview.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webview_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_widgets.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_widgets_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_xml.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_xml_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qt_functions.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qt_config.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/spec_post.prf \
-		../src/.qmake.stash \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/exclusive_builds.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/sdk.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/toolchain.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/toolchain.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/default_pre.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/default_pre.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/resolve_config.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/default_post.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/default_post.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/objective_c.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qml_debug.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/warn_on.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qt.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/resources.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/moc.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/unix/opengl.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/uic.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/unix/thread.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qmake_use.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/file_copies.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/rez.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/asset_catalogs.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/testcase_targets.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/exceptions.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/yacc.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/lex.prf \
+DIST          = ../../../../Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/qdevice.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/features/device_config.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/unix.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/mac.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/macx.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/sanitize.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/gcc-base.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/gcc-base-mac.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/clang.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/clang-mac.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/qconfig.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dcore.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dcore_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dextras.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dextras_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dinput.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dinput_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dlogic.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dlogic_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquick.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquick_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickextras.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickextras_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickinput.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickinput_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickrender.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickrender_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3drender.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3drender_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_accessibility_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_bluetooth.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_cgl_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_charts.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_charts_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_clucene_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_concurrent.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_core.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_core_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_datavisualization.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_datavisualization_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_dbus.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_dbus_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_designer.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_designer_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_fb_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_gamepad.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_gamepad_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_graphics_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_gui.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_gui_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_help.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_help_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_location.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_location_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_macextras.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_macextras_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimedia.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_network.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_network_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_networkauth.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_networkauth_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_nfc.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_nfc_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_opengl.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_opengl_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_openglextensions.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_packetprotocol_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_positioning.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_positioning_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_printsupport.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_purchasing.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_purchasing_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qml.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qml_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmldebug_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmltest.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quick.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quick_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickcontrols2.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_script.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_script_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_scripttools.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_scxml.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_scxml_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_sensors.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_sensors_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialbus.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialbus_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialport.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialport_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_sql.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_sql_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_svg.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_svg_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_testlib.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_testlib_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_texttospeech.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_texttospeech_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_theme_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_uiplugin.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_uitools.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_uitools_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webchannel.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webchannel_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webengine.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webengine_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecore.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecore_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginewidgets.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_websockets.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_websockets_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webview.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webview_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_widgets.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_widgets_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_xml.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_xml_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/features/qt_functions.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/qt_config.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/spec_post.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/exclusive_builds.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/mac/sdk.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/toolchain.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/mac/toolchain.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/default_pre.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/mac/default_pre.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/resolve_config.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/default_post.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/mac/default_post.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/mac/objective_c.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/qml_debug.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/warn_on.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/qt.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/resources.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/moc.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/unix/opengl.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/uic.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/unix/thread.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/qmake_use.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/file_copies.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/mac/rez.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/mac/asset_catalogs.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/testcase_targets.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/exceptions.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/yacc.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/lex.prf \
 		../src/3DPrintTest.pro ../src/mainwindow.h \
 		../src/backdrop.h \
 		../src/canvas.h \
@@ -277,375 +276,373 @@ $(TARGET): ui_mainwindow.h $(OBJECTS)
 	@test -d 3DPrintTest.app/Contents/MacOS/ || mkdir -p 3DPrintTest.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
-Makefile: ../src/3DPrintTest.pro /Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf /Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/qdevice.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/device_config.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/unix.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/mac.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/macx.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/sanitize.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/gcc-base.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/gcc-base-mac.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/clang.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/clang-mac.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/qconfig.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dcore.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dcore_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dextras.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dextras_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dinput.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dinput_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dlogic.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dlogic_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquick.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquick_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickextras.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickextras_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickinput.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickinput_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickrender.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickrender_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3drender.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3drender_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_accessibility_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_bluetooth.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_cgl_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_charts.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_charts_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_clucene_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_concurrent.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_core.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_core_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_datavisualization.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_datavisualization_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_dbus.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_dbus_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_designer.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_designer_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_fb_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_gamepad.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_gamepad_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_graphics_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_gui.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_gui_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_help.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_help_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_location.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_location_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_macextras.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_macextras_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimedia.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_network.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_network_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_networkauth.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_networkauth_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_nfc.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_nfc_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_opengl.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_opengl_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_openglextensions.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_packetprotocol_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_positioning.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_positioning_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_printsupport.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_purchasing.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_purchasing_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qml.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qml_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmldebug_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmltest.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quick.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quick_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickcontrols2.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_script.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_script_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_scripttools.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_scxml.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_scxml_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_sensors.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_sensors_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialbus.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialbus_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialport.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialport_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_sql.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_sql_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_svg.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_svg_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_testlib.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_testlib_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_texttospeech.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_texttospeech_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_theme_support_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_uiplugin.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_uitools.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_uitools_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webchannel.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webchannel_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webengine.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webengine_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecore.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecore_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginewidgets.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_websockets.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_websockets_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webview.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webview_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_widgets.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_widgets_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_xml.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_xml_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qt_functions.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qt_config.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/spec_post.prf \
-		.qmake.stash \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/exclusive_builds.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/sdk.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/toolchain.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/toolchain.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/default_pre.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/default_pre.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/resolve_config.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/default_post.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/default_post.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/objective_c.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qml_debug.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/warn_on.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qt.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/resources.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/moc.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/unix/opengl.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/uic.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/unix/thread.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qmake_use.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/file_copies.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/rez.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/asset_catalogs.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/testcase_targets.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/exceptions.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/yacc.prf \
-		/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/lex.prf \
+Makefile: ../src/3DPrintTest.pro ../../../../Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf ../../../../Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/qdevice.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/features/device_config.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/unix.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/mac.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/macx.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/sanitize.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/gcc-base.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/gcc-base-mac.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/clang.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/common/clang-mac.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/qconfig.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dcore.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dcore_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dextras.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dextras_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dinput.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dinput_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dlogic.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dlogic_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquick.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquick_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickextras.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickextras_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickinput.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickinput_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickrender.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickrender_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3drender.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3drender_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_accessibility_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_bluetooth.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_cgl_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_charts.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_charts_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_clucene_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_concurrent.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_core.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_core_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_datavisualization.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_datavisualization_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_dbus.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_dbus_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_designer.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_designer_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_fb_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_gamepad.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_gamepad_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_graphics_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_gui.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_gui_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_help.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_help_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_location.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_location_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_macextras.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_macextras_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimedia.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_network.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_network_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_networkauth.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_networkauth_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_nfc.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_nfc_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_opengl.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_opengl_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_openglextensions.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_packetprotocol_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_positioning.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_positioning_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_printsupport.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_purchasing.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_purchasing_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qml.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qml_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmldebug_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmltest.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quick.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quick_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickcontrols2.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_script.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_script_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_scripttools.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_scxml.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_scxml_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_sensors.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_sensors_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialbus.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialbus_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialport.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialport_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_sql.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_sql_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_svg.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_svg_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_testlib.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_testlib_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_texttospeech.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_texttospeech_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_theme_support_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_uiplugin.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_uitools.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_uitools_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webchannel.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webchannel_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webengine.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webengine_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecore.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecore_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginewidgets.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_websockets.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_websockets_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webview.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webview_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_widgets.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_widgets_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_xml.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_xml_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
+		../../../../Qt/5.8/clang_64/mkspecs/features/qt_functions.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/qt_config.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/spec_post.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/exclusive_builds.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/mac/sdk.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/toolchain.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/mac/toolchain.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/default_pre.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/mac/default_pre.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/resolve_config.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/default_post.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/mac/default_post.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/mac/objective_c.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/qml_debug.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/warn_on.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/qt.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/resources.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/moc.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/unix/opengl.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/uic.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/unix/thread.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/qmake_use.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/file_copies.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/mac/rez.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/mac/asset_catalogs.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/testcase_targets.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/exceptions.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/yacc.prf \
+		../../../../Qt/5.8/clang_64/mkspecs/features/lex.prf \
 		../src/3DPrintTest.pro \
 		../src/gl.qrc \
 		../src/qt.qrc \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtOpenGL.framework/QtOpenGL.prl \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/QtWidgets.prl \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/QtGui.prl \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/QtXml.prl \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/QtCore.prl
+		../../../../Qt/5.8/clang_64/lib/QtOpenGL.framework/QtOpenGL.prl \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/QtWidgets.prl \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/QtGui.prl \
+		../../../../Qt/5.8/clang_64/lib/QtXml.framework/QtXml.prl \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/QtCore.prl
 	$(QMAKE) -o Makefile ../src/3DPrintTest.pro -spec macx-clang CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/spec_pre.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/qdevice.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/device_config.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/unix.conf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/mac.conf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/macx.conf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/sanitize.conf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/gcc-base.conf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/gcc-base-mac.conf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/clang.conf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/common/clang-mac.conf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/qconfig.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dcore.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dcore_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dextras.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dextras_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dinput.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dinput_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dlogic.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dlogic_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquick.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquick_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickextras.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickextras_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickinput.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickinput_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickrender.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickrender_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3drender.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_3drender_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_accessibility_support_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_bluetooth.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_cgl_support_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_charts.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_charts_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_clucene_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_concurrent.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_core.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_core_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_datavisualization.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_datavisualization_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_dbus.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_dbus_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_designer.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_designer_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_fb_support_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_gamepad.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_gamepad_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_graphics_support_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_gui.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_gui_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_help.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_help_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_location.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_location_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_macextras.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_macextras_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimedia.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_network.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_network_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_networkauth.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_networkauth_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_nfc.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_nfc_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_opengl.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_opengl_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_openglextensions.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_packetprotocol_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_positioning.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_positioning_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_printsupport.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_purchasing.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_purchasing_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qml.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qml_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmldebug_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmltest.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quick.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quick_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickcontrols2.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_script.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_script_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_scripttools.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_scxml.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_scxml_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_sensors.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_sensors_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialbus.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialbus_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialport.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialport_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_sql.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_sql_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_svg.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_svg_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_testlib.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_testlib_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_texttospeech.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_texttospeech_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_theme_support_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_uiplugin.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_uitools.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_uitools_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webchannel.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webchannel_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webengine.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webengine_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecore.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecore_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginewidgets.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_websockets.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_websockets_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webview.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_webview_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_widgets.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_widgets_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_xml.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_xml_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qt_functions.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qt_config.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/spec_post.prf:
-.qmake.stash:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/exclusive_builds.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/sdk.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/toolchain.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/toolchain.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/default_pre.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/default_pre.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/resolve_config.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/default_post.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/default_post.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/objective_c.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qml_debug.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/warn_on.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qt.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/resources.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/moc.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/unix/opengl.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/uic.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/unix/thread.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/qmake_use.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/file_copies.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/rez.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/mac/asset_catalogs.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/testcase_targets.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/exceptions.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/yacc.prf:
-/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/lex.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/spec_pre.prf:
+../../../../Qt/5.8/clang_64/mkspecs/qdevice.pri:
+../../../../Qt/5.8/clang_64/mkspecs/features/device_config.prf:
+../../../../Qt/5.8/clang_64/mkspecs/common/unix.conf:
+../../../../Qt/5.8/clang_64/mkspecs/common/mac.conf:
+../../../../Qt/5.8/clang_64/mkspecs/common/macx.conf:
+../../../../Qt/5.8/clang_64/mkspecs/common/sanitize.conf:
+../../../../Qt/5.8/clang_64/mkspecs/common/gcc-base.conf:
+../../../../Qt/5.8/clang_64/mkspecs/common/gcc-base-mac.conf:
+../../../../Qt/5.8/clang_64/mkspecs/common/clang.conf:
+../../../../Qt/5.8/clang_64/mkspecs/common/clang-mac.conf:
+../../../../Qt/5.8/clang_64/mkspecs/qconfig.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dcore.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dcore_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dextras.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dextras_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dinput.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dinput_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dlogic.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dlogic_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquick.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquick_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickextras.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickextras_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickinput.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickinput_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickrender.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3dquickrender_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3drender.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_3drender_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_accessibility_support_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_bluetooth.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_cgl_support_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_charts.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_charts_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_clucene_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_concurrent.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_core.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_core_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_datavisualization.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_datavisualization_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_dbus.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_dbus_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_designer.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_designer_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_fb_support_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_gamepad.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_gamepad_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_graphics_support_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_gui.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_gui_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_help.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_help_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_location.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_location_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_macextras.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_macextras_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimedia.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_network.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_network_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_networkauth.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_networkauth_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_nfc.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_nfc_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_opengl.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_opengl_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_openglextensions.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_packetprotocol_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_positioning.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_positioning_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_printsupport.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_purchasing.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_purchasing_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qml.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qml_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmldebug_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmltest.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quick.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quick_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickcontrols2.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_script.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_script_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_scripttools.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_scxml.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_scxml_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_sensors.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_sensors_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialbus.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialbus_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialport.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_serialport_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_sql.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_sql_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_svg.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_svg_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_testlib.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_testlib_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_texttospeech.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_texttospeech_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_theme_support_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_uiplugin.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_uitools.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_uitools_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webchannel.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webchannel_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webengine.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webengine_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecore.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecore_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginewidgets.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_websockets.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_websockets_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webview.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_webview_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_widgets.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_widgets_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_xml.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_xml_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri:
+../../../../Qt/5.8/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri:
+../../../../Qt/5.8/clang_64/mkspecs/features/qt_functions.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/qt_config.prf:
+../../../../Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf:
+../../../../Qt/5.8/clang_64/mkspecs/features/spec_post.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/exclusive_builds.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/mac/sdk.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/toolchain.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/mac/toolchain.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/default_pre.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/mac/default_pre.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/resolve_config.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/default_post.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/mac/default_post.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/mac/objective_c.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/qml_debug.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/warn_on.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/qt.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/resources.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/moc.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/unix/opengl.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/uic.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/unix/thread.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/qmake_use.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/file_copies.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/mac/rez.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/mac/asset_catalogs.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/testcase_targets.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/exceptions.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/yacc.prf:
+../../../../Qt/5.8/clang_64/mkspecs/features/lex.prf:
 ../src/3DPrintTest.pro:
 ../src/gl.qrc:
 ../src/qt.qrc:
-/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtOpenGL.framework/QtOpenGL.prl:
-/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/QtWidgets.prl:
-/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/QtGui.prl:
-/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/QtXml.prl:
-/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/QtCore.prl:
+../../../../Qt/5.8/clang_64/lib/QtOpenGL.framework/QtOpenGL.prl:
+../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/QtWidgets.prl:
+../../../../Qt/5.8/clang_64/lib/QtGui.framework/QtGui.prl:
+../../../../Qt/5.8/clang_64/lib/QtXml.framework/QtXml.prl:
+../../../../Qt/5.8/clang_64/lib/QtCore.framework/QtCore.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../src/3DPrintTest.pro -spec macx-clang CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug
 
@@ -671,7 +668,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../src/gl.qrc ../src/qt.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents /Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../../../Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../src/mainwindow.h ../src/backdrop.h ../src/canvas.h ../src/glmesh.h ../src/loader.h ../src/mesh.h ../src/layerdraw.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../src/main.cpp ../src/mainwindow.cpp ../src/backdrop.cpp ../src/canvas.cpp ../src/glmesh.cpp ../src/loader.cpp ../src/mesh.cpp ../src/layerdraw.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../src/mainwindow.ui $(DISTDIR)/
@@ -684,7 +681,6 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r 3DPrintTest.app
-	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -702,7 +698,7 @@ compiler_rcc_make_all: qrc_gl.cpp qrc_qt.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_gl.cpp qrc_qt.cpp
 qrc_gl.cpp: ../src/gl.qrc \
-		/Users/alitoyserkani/Qt/5.8/clang_64/bin/rcc \
+		../../../../Qt/5.8/clang_64/bin/rcc \
 		../src/gl/quad.frag \
 		../src/gl/mesh.vert \
 		../src/gl/quad.vert \
@@ -710,57 +706,57 @@ qrc_gl.cpp: ../src/gl.qrc \
 	/Users/alitoyserkani/Qt/5.8/clang_64/bin/rcc -name gl ../src/gl.qrc -o qrc_gl.cpp
 
 qrc_qt.cpp: ../src/qt.qrc \
-		/Users/alitoyserkani/Qt/5.8/clang_64/bin/rcc \
+		../../../../Qt/5.8/clang_64/bin/rcc \
 		../src/qt/style.qss
 	/Users/alitoyserkani/Qt/5.8/clang_64/bin/rcc -name qt ../src/qt.qrc -o qrc_qt.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
-moc_predefs.h: /Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_CFLAGS) -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp
+moc_predefs.h: ../../../../Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_CFLAGS) -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h ../../../../Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_canvas.cpp moc_loader.cpp moc_layerdraw.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp moc_canvas.cpp moc_loader.cpp moc_layerdraw.cpp
-moc_mainwindow.cpp: /Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QActionGroup \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qactiongroup.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFileSystemWatcher \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfilesystemwatcher.h \
+moc_mainwindow.cpp: ../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QActionGroup \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qactiongroup.h \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFileSystemWatcher \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfilesystemwatcher.h \
 		../src/mainwindow.h \
 		moc_predefs.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/bin/moc
-	/Users/alitoyserkani/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/alitoyserkani/Desktop/Work/Additive_Manufacturing_Laboratory/Software/STL_to_XML_GUI/3DPrint_GUI/3DPrintTest/src -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtOpenGL.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/alitoyserkani/Qt/5.8/clang_64/lib ../src/mainwindow.h -o moc_mainwindow.cpp
+		../../../../Qt/5.8/clang_64/bin/moc
+	/Users/alitoyserkani/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/alitoyserkani/Desktop/Projects/Versa3D/src -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtOpenGL.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/alitoyserkani/Qt/5.8/clang_64/lib ../src/mainwindow.h -o moc_mainwindow.cpp
 
-moc_canvas.cpp: /Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QPropertyAnimation \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qpropertyanimation.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QMatrix4x4 \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qmatrix4x4.h \
+moc_canvas.cpp: ../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QPropertyAnimation \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qpropertyanimation.h \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QMatrix4x4 \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/qmatrix4x4.h \
 		../src/canvas.h \
 		moc_predefs.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/bin/moc
-	/Users/alitoyserkani/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/alitoyserkani/Desktop/Work/Additive_Manufacturing_Laboratory/Software/STL_to_XML_GUI/3DPrint_GUI/3DPrintTest/src -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtOpenGL.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/alitoyserkani/Qt/5.8/clang_64/lib ../src/canvas.h -o moc_canvas.cpp
+		../../../../Qt/5.8/clang_64/bin/moc
+	/Users/alitoyserkani/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/alitoyserkani/Desktop/Projects/Versa3D/src -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtOpenGL.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/alitoyserkani/Qt/5.8/clang_64/lib ../src/canvas.h -o moc_canvas.cpp
 
-moc_loader.cpp: /Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QThread \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qthread.h \
+moc_loader.cpp: ../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QThread \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qthread.h \
 		../src/mesh.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../src/loader.h \
 		moc_predefs.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/bin/moc
-	/Users/alitoyserkani/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/alitoyserkani/Desktop/Work/Additive_Manufacturing_Laboratory/Software/STL_to_XML_GUI/3DPrint_GUI/3DPrintTest/src -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtOpenGL.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/alitoyserkani/Qt/5.8/clang_64/lib ../src/loader.h -o moc_loader.cpp
+		../../../../Qt/5.8/clang_64/bin/moc
+	/Users/alitoyserkani/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/alitoyserkani/Desktop/Projects/Versa3D/src -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtOpenGL.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/alitoyserkani/Qt/5.8/clang_64/lib ../src/loader.h -o moc_loader.cpp
 
-moc_layerdraw.cpp: /Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+moc_layerdraw.cpp: ../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		../src/layerdraw.h \
 		moc_predefs.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/bin/moc
-	/Users/alitoyserkani/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/alitoyserkani/Desktop/Work/Additive_Manufacturing_Laboratory/Software/STL_to_XML_GUI/3DPrint_GUI/3DPrintTest/src -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtOpenGL.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/alitoyserkani/Qt/5.8/clang_64/lib ../src/layerdraw.h -o moc_layerdraw.cpp
+		../../../../Qt/5.8/clang_64/bin/moc
+	/Users/alitoyserkani/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/alitoyserkani/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/alitoyserkani/Desktop/Projects/Versa3D/src -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtOpenGL.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/Headers -I/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/alitoyserkani/Qt/5.8/clang_64/lib ../src/layerdraw.h -o moc_layerdraw.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -768,17 +764,17 @@ compiler_uic_make_all: ui_mainwindow.h
 compiler_uic_clean:
 	-$(DEL_FILE) ui_mainwindow.h
 ui_mainwindow.h: ../src/mainwindow.ui \
-		/Users/alitoyserkani/Qt/5.8/clang_64/bin/uic \
+		../../../../Qt/5.8/clang_64/bin/uic \
 		../src/canvas.h \
 		../src/layerdraw.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QPropertyAnimation \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qpropertyanimation.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QMatrix4x4 \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qmatrix4x4.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QPropertyAnimation \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qpropertyanimation.h \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QMatrix4x4 \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/qmatrix4x4.h \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
 	/Users/alitoyserkani/Qt/5.8/clang_64/bin/uic ../src/mainwindow.ui -o ui_mainwindow.h
 
 compiler_rez_source_make_all:
@@ -794,103 +790,104 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 ####### Compile
 
 main.o: ../src/main.cpp ../src/mainwindow.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QActionGroup \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qactiongroup.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFileSystemWatcher \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfilesystemwatcher.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QApplication \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QActionGroup \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qactiongroup.h \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFileSystemWatcher \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfilesystemwatcher.h \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../src/main.cpp
 
 mainwindow.o: ../src/mainwindow.cpp ../src/mainwindow.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QActionGroup \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qactiongroup.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFileSystemWatcher \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfilesystemwatcher.h \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QActionGroup \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qactiongroup.h \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFileSystemWatcher \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfilesystemwatcher.h \
 		ui_mainwindow.h \
 		../src/canvas.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QPropertyAnimation \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qpropertyanimation.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QMatrix4x4 \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qmatrix4x4.h \
-		../src/layerdraw.h \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QPropertyAnimation \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qpropertyanimation.h \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QMatrix4x4 \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/qmatrix4x4.h \
 		../src/loader.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QThread \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qthread.h \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QThread \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qthread.h \
 		../src/mesh.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMenuBar \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmenubar.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QFileDialog \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qfiledialog.h
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMenuBar \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmenubar.h \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QFileDialog \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qfiledialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../src/mainwindow.cpp
 
 backdrop.o: ../src/backdrop.cpp ../src/backdrop.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o backdrop.o ../src/backdrop.cpp
 
-canvas.o: ../src/canvas.cpp /Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QMouseEvent \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qevent.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QDebug \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+canvas.o: ../src/canvas.cpp ../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QMouseEvent \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		../src/canvas.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QPropertyAnimation \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qpropertyanimation.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QMatrix4x4 \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qmatrix4x4.h \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QPropertyAnimation \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qpropertyanimation.h \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QMatrix4x4 \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/qmatrix4x4.h \
 		../src/backdrop.h \
 		../src/glmesh.h \
 		../src/mesh.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o canvas.o ../src/canvas.cpp
 
 glmesh.o: ../src/glmesh.cpp ../src/glmesh.h \
 		../src/mesh.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o glmesh.o ../src/glmesh.cpp
 
 loader.o: ../src/loader.cpp ../src/loader.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QThread \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qthread.h \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QThread \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qthread.h \
 		../src/mesh.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o loader.o ../src/loader.cpp
 
-mesh.o: ../src/mesh.cpp /Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFile \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfile.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QDataStream \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qdatastream.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QVector3D \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qvector3d.h \
+mesh.o: ../src/mesh.cpp ../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFile \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QDataStream \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qdatastream.h \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QVector3D \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/qvector3d.h \
 		../src/mesh.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mesh.o ../src/mesh.cpp
 
 layerdraw.o: ../src/layerdraw.cpp ../src/layerdraw.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qpainter.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFile \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfile.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/Headers/QtXml \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/Headers/qtxmlglobal.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/Headers/qdom.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/Headers/qxml.h \
-		/Users/alitoyserkani/Qt/5.8/clang_64/lib/QtXml.framework/Headers/qtxmlversion.h
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/qpainter.h \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFile \
+		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		../../../../Qt/5.8/clang_64/lib/QtXml.framework/Headers/QtXml \
+		../../../../Qt/5.8/clang_64/lib/QtXml.framework/Headers/qtxmlglobal.h \
+		../../../../Qt/5.8/clang_64/lib/QtXml.framework/Headers/qdom.h \
+		../../../../Qt/5.8/clang_64/lib/QtXml.framework/Headers/qxml.h \
+		../../../../Qt/5.8/clang_64/lib/QtXml.framework/Headers/qtxmlversion.h \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QBitmap \
+		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/qbitmap.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o layerdraw.o ../src/layerdraw.cpp
 
 qrc_gl.o: qrc_gl.cpp 

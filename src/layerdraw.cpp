@@ -254,6 +254,7 @@ void LayerDraw::drawBackground()
     infoPen.setJoinStyle(Qt::MiterJoin);
     infoPainter.setPen(infoPen);
     infoPainter.drawText(10,350, QString("XMin:") + QString::number(meshXMin) + "  " + QString("XMax:") + QString::number(meshXMax));
+    qDebug() << "background drawn..";
 }
 
 

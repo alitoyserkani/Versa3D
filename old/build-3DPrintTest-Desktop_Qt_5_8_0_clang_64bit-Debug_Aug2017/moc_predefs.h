@@ -209,9 +209,7 @@
 #define __SSE__ 1
 #define __SSP__ 1
 #define __SSSE3__ 1
-#define __STDCPP_DEFAULT_NEW_ALIGNMENT__ 16UL
 #define __STDC_HOSTED__ 1
-#define __STDC_NO_THREADS__ 1
 #define __STDC_UTF_16__ 1
 #define __STDC_UTF_32__ 1
 #define __STDC__ 1
@@ -307,7 +305,7 @@
 #define __UINT_LEAST8_MAX__ 255
 #define __UINT_LEAST8_TYPE__ unsigned char
 #define __USER_LABEL_PREFIX__ _
-#define __VERSION__ "4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.37)"
+#define __VERSION__ "4.2.1 Compatible Apple LLVM 8.1.0 (clang-802.0.42)"
 #define __WCHAR_MAX__ 2147483647
 #define __WCHAR_TYPE__ int
 #define __WCHAR_WIDTH__ 32
@@ -315,13 +313,13 @@
 #define __WINT_WIDTH__ 32
 #define __amd64 1
 #define __amd64__ 1
-#define __apple_build_version__ 9000037
+#define __apple_build_version__ 8020042
 #define __block __attribute__((__blocks__(byref)))
 #define __clang__ 1
-#define __clang_major__ 9
-#define __clang_minor__ 0
+#define __clang_major__ 8
+#define __clang_minor__ 1
 #define __clang_patchlevel__ 0
-#define __clang_version__ "9.0.0 (clang-900.0.37)"
+#define __clang_version__ "8.1.0 (clang-802.0.42)"
 #define __core2 1
 #define __core2__ 1
 #define __cplusplus 201103L
@@ -331,7 +329,7 @@
 #define __cpp_decltype 200707
 #define __cpp_delegating_constructors 200604
 #define __cpp_exceptions 199711
-#define __cpp_inheriting_constructors 201511
+#define __cpp_inheriting_constructors 200802
 #define __cpp_initializer_lists 200806
 #define __cpp_lambdas 200907
 #define __cpp_nsdmi 200809
