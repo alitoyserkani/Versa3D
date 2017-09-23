@@ -132,7 +132,6 @@ void MainWindow::on_open()
     qDebug() << "Hey my habibi bro";
     QString filename = QFileDialog::getOpenFileName(
                 this, "Load .stl file", QString(), "*.stl");
-    qDebug() << "Hey my habibi";
     qDebug() << filename;
     if (!filename.isNull())
     {
@@ -336,12 +335,27 @@ bool MainWindow::load_stl(const QString& filename, bool is_reload)
     //Clearing svg files after
     std::stringstream ss;
     qDebug() << filename;
+    qDebug() << filename.toUtf8().constData();
     ss << "../../../../tools/Slic3r.app/Contents/MacOS/slic3r --export-svg " << filename.toUtf8().constData() << " --layer-height 0.1 --output ../../../../files/SVG_Files";
     system(ss.str().c_str()); //may automatically wait for completion
     //NOTE : This need to be changed for the deployable version and stored in proper directories
     qDebug() << filename.endsWith(".stl"); //use this later
 
-    ui->svg_viewer->loadData("../../../../files/SVG_Files/testEggShape.svg");
+    // temporary, move into custom method
+    int lastSlash = filename.lastIndexOf("/"); //different for varying operating systems
+
+    QString svgRawFileName = filename.right(filename.length() - lastSlash - 1); // -1 so that the slash doesn't show up
+    if (svgRawFileName.endsWith("stl"))
+        svgRawFileName.replace(QString("stl"), QString("svg"));
+    else if (svgRawFileName.endsWith("STL"))
+        svgRawFileName.replace(QString("STL"), QString("svg"));
+    else qDebug() << "File has an error, fix bug";
+
+
+    qDebug() << svgRawFileName << "This is file";
+
+
+    ui->svg_viewer->loadData("../../../../files/SVG_Files/" + svgRawFileName);
     ui->svg_viewer->currLayer = ui->lineEdit->text().toInt();
     ui->svg_viewer->update();
     ui->verticalSlider->setMaximum(ui->svg_viewer->numLayers);

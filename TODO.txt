@@ -13,6 +13,10 @@ Ensure that overall architechture is kept up to standard and that it will allow 
 IMPORTANT:
 scaling of part slices in PaintEngine area and useful IS A MUST
 
+adding list of pre-sliced parts, to eliminate need for slicing at all
+
+in order to have nicer code --> make a Painting engine so all 2D rendering can be funneled through that
+
 having 2D build area in PaintEngine is a must
 
 PROBLEMS:
@@ -24,3 +28,7 @@ scaling of part in build space is off
 
 NOTE: when running the application outside of the IDE, the "system()" command does not work; remove change to QProcess, probably a flag from OSX to try to hack into the system :)
 
+
+FIx bugs:
+-When loading new STL mesh, svg's of previous parts may appear
+- fix rendering scaling and translation on paintengine

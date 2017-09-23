@@ -70,9 +70,19 @@ void LayerDraw::paintEvent(QPaintEvent * e)
 
 bool LayerDraw::loadData(QString SVGfilePath)
 {
+    // delete previous data if new SVG is being loaded
+    hasLayersLoaded = false;
+
+
+    // if there is a second loading of data, remove all polygon data from previous SVG
+    if (layerInfoList.size() > 0)
+        layerInfoList.remove(0,layerInfoList.size()-1);
+
+
     QFile file(SVGfilePath);
 
     QDomDocument document;
+
 
     //Check if file is valid
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -254,7 +264,6 @@ void LayerDraw::drawBackground()
     infoPen.setJoinStyle(Qt::MiterJoin);
     infoPainter.setPen(infoPen);
     infoPainter.drawText(10,350, QString("XMin:") + QString::number(meshXMin) + "  " + QString("XMax:") + QString::number(meshXMax));
-    qDebug() << "background drawn..";
 }
 
 
