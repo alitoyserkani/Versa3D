@@ -83,7 +83,6 @@ bool LayerDraw::loadData(QString SVGfilePath)
 
     QDomDocument document;
 
-
     //Check if file is valid
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "File open failed";
