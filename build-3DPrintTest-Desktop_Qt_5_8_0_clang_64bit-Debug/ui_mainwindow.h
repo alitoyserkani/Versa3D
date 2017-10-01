@@ -49,6 +49,7 @@ public:
     QHBoxLayout *horizontalLayout_4;
     LayerDraw *svg_viewer;
     QLabel *thicknessLabel;
+    QWidget *tab_5;
     QWidget *tab_2;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
@@ -58,7 +59,7 @@ public:
     QTabWidget *tabWidget_2;
     QWidget *machine_tab;
     QLabel *systemImage;
-    QWidget *widget;
+    QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_4;
     QLabel *machineLabel;
     QLabel *processLabel;
@@ -137,6 +138,9 @@ public:
         horizontalLayout_4->addWidget(svg_viewer);
 
         tabWidget->addTab(tab_1, QString());
+        tab_5 = new QWidget();
+        tab_5->setObjectName(QStringLiteral("tab_5"));
+        tabWidget->addTab(tab_5, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
         tabWidget->addTab(tab_2, QString());
@@ -190,20 +194,20 @@ public:
         systemImage = new QLabel(machine_tab);
         systemImage->setObjectName(QStringLiteral("systemImage"));
         systemImage->setGeometry(QRect(10, 10, 61, 51));
-        widget = new QWidget(machine_tab);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(90, 10, 216, 40));
-        verticalLayout_4 = new QVBoxLayout(widget);
+        layoutWidget1 = new QWidget(machine_tab);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(90, 10, 216, 40));
+        verticalLayout_4 = new QVBoxLayout(layoutWidget1);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        machineLabel = new QLabel(widget);
+        machineLabel = new QLabel(layoutWidget1);
         machineLabel->setObjectName(QStringLiteral("machineLabel"));
 
         verticalLayout_4->addWidget(machineLabel);
 
-        processLabel = new QLabel(widget);
+        processLabel = new QLabel(layoutWidget1);
         processLabel->setObjectName(QStringLiteral("processLabel"));
 
         verticalLayout_4->addWidget(processLabel);
@@ -257,6 +261,7 @@ public:
         pushButton->setText(QApplication::translate("MainWindow", "Generate Machine Code", Q_NULLPTR));
         thicknessLabel->setText(QApplication::translate("MainWindow", "Layer Thickness:", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_1), QApplication::translate("MainWindow", "Slice", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow", "Infill", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Raster", Q_NULLPTR));
         layerNum_label->setText(QApplication::translate("MainWindow", "Layer #", Q_NULLPTR));
         lineEdit->setText(QString());

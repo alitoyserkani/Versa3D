@@ -361,13 +361,12 @@ bool MainWindow::load_stl(const QString& filename, bool is_reload)
     ui->verticalSlider->setMaximum(ui->svg_viewer->numLayers);
     //draw layers onto svg widget
 
-    ui->svg_viewer->meshXMin = ui->stl_viewer->getXMin();
-    ui->svg_viewer->meshXMax = ui->stl_viewer->getXMax();
-    ui->svg_viewer->meshYMin = ui->stl_viewer->getYMin();
-    ui->svg_viewer->meshYMax = ui->stl_viewer->getYMax();
+//    ui->svg_viewer->meshXMin = ui->stl_viewer->getXMin();
+//    ui->svg_viewer->meshXMax = ui->stl_viewer->getXMax();
+//    ui->svg_viewer->meshYMin = ui->stl_viewer->getYMin();
+//    ui->svg_viewer->meshYMax = ui->stl_viewer->getYMax();
 
     ui->thicknessLabel->setText("Layer Thickness: 0.1 mm");
-    qDebug() << ui->stl_viewer->getZMin() << ui->stl_viewer->getZMax();
 
     return true;
 }

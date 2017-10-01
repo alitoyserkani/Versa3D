@@ -139,6 +139,8 @@ void Canvas::initializeGL()
     mesh_shader.link();
 
     backdrop = new Backdrop(); // new background is needed
+
+    //Add Buildspace here:
 }
 
 void Canvas::paintEvent(QPaintEvent *event)
@@ -176,7 +178,6 @@ void Canvas::draw_mesh()
     glUniformMatrix4fv(
                 mesh_shader.uniformLocation("view_matrix"),
                 1, GL_FALSE, view_matrix().data());
-
 
 
     // Compensate for z-flattening when zooming

@@ -5,6 +5,7 @@
 #include <QFile>
 #include <QtXml>
 #include <QBitmap>
+#include <QMouseEvent>
 
 LayerDraw::LayerDraw(QWidget *parent) :
     QWidget(parent)
@@ -100,6 +101,10 @@ bool LayerDraw::loadData(QString SVGfilePath)
     QDomNodeList layerNodes = root.childNodes();
     //QVector<QVector<QList<QPointF>>> shapes;
     numLayers = layerNodes.count();
+
+    float maxX = std::numeric_limits<float>::min(), minX = std::numeric_limits<float>::max(),
+          maxY = std::numeric_limits<float>::min(), minY = std::numeric_limits<float>::max();
+
     for (int i = 0; i < layerNodes.count(); i++) {
 
         QDomNodeList shapesInLayer = layerNodes.at(i).childNodes();
@@ -113,6 +118,11 @@ bool LayerDraw::loadData(QString SVGfilePath)
                 QStringList coord = pointsString.at(k).split(",");
                 pointsInShape << QPointF(coord.at(0).toFloat(),coord.at(1).toFloat());
 
+                if (coord.at(0).toFloat() > maxX) maxX = coord.at(0).toFloat();
+                if (coord.at(0).toFloat() < minX) minX = coord.at(0).toFloat();
+                if (coord.at(1).toFloat() > maxY) maxY = coord.at(1).toFloat();
+                if (coord.at(1).toFloat() < minY) minY = coord.at(1).toFloat();
+
             }
             layerShapes.push_back(pointsInShape);
 
@@ -123,6 +133,9 @@ bool LayerDraw::loadData(QString SVGfilePath)
 
 
     }
+    meshXMax = maxX; meshXMin = minX;
+    meshYMax = maxY; meshYMin = minY;
+
     hasLayersLoaded = true;
     return true;
 }
@@ -214,6 +227,8 @@ int LayerDraw::getNumLayers()
     return layerInfoList.size();
 }
 
+
+
 QList<QImage> LayerDraw::segmentImage(QImage image, QSize printArea)
 {
     //TO-DO: with given build size, slice images and add correct filename to be identified by the printhead buffer
@@ -262,7 +277,27 @@ void LayerDraw::drawBackground()
     infoPen.setColor(Qt::black);
     infoPen.setJoinStyle(Qt::MiterJoin);
     infoPainter.setPen(infoPen);
-    infoPainter.drawText(10,350, QString("XMin:") + QString::number(meshXMin) + "  " + QString("XMax:") + QString::number(meshXMax));
+    infoPainter.drawText(10,335, QString("XMin:") + QString::number(meshXMin) + "  " + QString("XMax:") + QString::number(meshXMax));
+    infoPainter.drawText(10,350, QString("YMin:") + QString::number(meshYMin) + "  " + QString("YMax:") + QString::number(meshYMax));
+}
+
+void LayerDraw::mousePressEvent(QMouseEvent * event)
+{
+    if (event->button() == Qt::LeftButton ||
+        event->button() == Qt::RightButton)
+    {
+        mouse_pos = event->pos();
+        setCursor(Qt::ClosedHandCursor);
+    }
+}
+
+void LayerDraw::mouseReleaseEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton ||
+        event->button() == Qt::RightButton)
+    {
+        unsetCursor();
+    }
 }
 
 

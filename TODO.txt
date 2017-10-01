@@ -32,3 +32,4 @@ NOTE: when running the application outside of the IDE, the "system()" command do
 FIx bugs:
 -When loading new STL mesh, svg's of previous parts may appear
 - fix rendering scaling and translation on paintengine
+-add tolerance to approximate to certain decimal place in UI

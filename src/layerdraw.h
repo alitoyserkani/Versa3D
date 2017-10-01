@@ -25,14 +25,8 @@ public:
     float meshXMin, meshXMax;
     float meshYMin, meshYMax;
 
-
-
-protected:
-    //void paintEvent(QPaintEvent * e);
-
 private:
     QVector<QVector<QPolygonF>> layerInfoList;
-
 
     bool hasLayersLoaded;
 
@@ -41,6 +35,14 @@ private:
     // for now, segmentation will happen after the images have been saved
     // there is a list to be returned to saveBitmapImages function --> check soft. architechture later
     QList<QImage> segmentImage(QImage image, QSize printArea); //printArea: amount of area the printhead can cover at once
+
+    QPoint mouse_pos;
+
+
+protected:
+    //void paintEvent(QPaintEvent * e);
+    void mousePressEvent(QMouseEvent * event);
+    void mouseReleaseEvent(QMouseEvent * event);
 
 
 };
