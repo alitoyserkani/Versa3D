@@ -55,7 +55,8 @@ SOURCES       = ../src/main.cpp \
 		../src/glmesh.cpp \
 		../src/loader.cpp \
 		../src/mesh.cpp \
-		../src/layerdraw.cpp qrc_gl.cpp \
+		../src/layerdraw.cpp \
+		../src/buildspace.cpp qrc_gl.cpp \
 		qrc_qt.cpp \
 		moc_mainwindow.cpp \
 		moc_canvas.cpp \
@@ -69,6 +70,7 @@ OBJECTS       = main.o \
 		loader.o \
 		mesh.o \
 		layerdraw.o \
+		buildspace.o \
 		qrc_gl.o \
 		qrc_qt.o \
 		moc_mainwindow.o \
@@ -224,6 +226,7 @@ DIST          = ../../../../Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.8/clang_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/5.8/clang_64/mkspecs/features/spec_post.prf \
+		../src/.qmake.stash \
 		../../../../Qt/5.8/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.8/clang_64/mkspecs/features/mac/sdk.prf \
 		../../../../Qt/5.8/clang_64/mkspecs/features/toolchain.prf \
@@ -256,14 +259,16 @@ DIST          = ../../../../Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		../src/glmesh.h \
 		../src/loader.h \
 		../src/mesh.h \
-		../src/layerdraw.h ../src/main.cpp \
+		../src/layerdraw.h \
+		../src/buildspace.h ../src/main.cpp \
 		../src/mainwindow.cpp \
 		../src/backdrop.cpp \
 		../src/canvas.cpp \
 		../src/glmesh.cpp \
 		../src/loader.cpp \
 		../src/mesh.cpp \
-		../src/layerdraw.cpp
+		../src/layerdraw.cpp \
+		../src/buildspace.cpp
 QMAKE_TARGET  = 3DPrintTest
 DESTDIR       = 
 TARGET        = 3DPrintTest.app/Contents/MacOS/3DPrintTest
@@ -425,6 +430,7 @@ Makefile: ../src/3DPrintTest.pro ../../../../Qt/5.8/clang_64/mkspecs/macx-clang/
 		../../../../Qt/5.8/clang_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/5.8/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/5.8/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.8/clang_64/mkspecs/features/mac/sdk.prf \
 		../../../../Qt/5.8/clang_64/mkspecs/features/toolchain.prf \
@@ -609,6 +615,7 @@ Makefile: ../src/3DPrintTest.pro ../../../../Qt/5.8/clang_64/mkspecs/macx-clang/
 ../../../../Qt/5.8/clang_64/mkspecs/features/qt_config.prf:
 ../../../../Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../../../Qt/5.8/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt/5.8/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/5.8/clang_64/mkspecs/features/mac/sdk.prf:
 ../../../../Qt/5.8/clang_64/mkspecs/features/toolchain.prf:
@@ -669,8 +676,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../src/gl.qrc ../src/qt.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../src/mainwindow.h ../src/backdrop.h ../src/canvas.h ../src/glmesh.h ../src/loader.h ../src/mesh.h ../src/layerdraw.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../src/main.cpp ../src/mainwindow.cpp ../src/backdrop.cpp ../src/canvas.cpp ../src/glmesh.cpp ../src/loader.cpp ../src/mesh.cpp ../src/layerdraw.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../src/mainwindow.h ../src/backdrop.h ../src/canvas.h ../src/glmesh.h ../src/loader.h ../src/mesh.h ../src/layerdraw.h ../src/buildspace.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../src/main.cpp ../src/mainwindow.cpp ../src/backdrop.cpp ../src/canvas.cpp ../src/glmesh.cpp ../src/loader.cpp ../src/mesh.cpp ../src/layerdraw.cpp ../src/buildspace.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../src/mainwindow.ui $(DISTDIR)/
 
 
@@ -681,6 +688,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r 3DPrintTest.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -700,8 +708,10 @@ compiler_rcc_clean:
 qrc_gl.cpp: ../src/gl.qrc \
 		../../../../Qt/5.8/clang_64/bin/rcc \
 		../src/gl/quad.frag \
+		../src/gl/buildspace.vert \
 		../src/gl/mesh.vert \
 		../src/gl/quad.vert \
+		../src/gl/buildspace.frag \
 		../src/gl/mesh.frag
 	/Users/alitoyserkani/Qt/5.8/clang_64/bin/rcc -name gl ../src/gl.qrc -o qrc_gl.cpp
 
@@ -815,6 +825,7 @@ mainwindow.o: ../src/mainwindow.cpp ../src/mainwindow.h \
 		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qpropertyanimation.h \
 		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QMatrix4x4 \
 		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/qmatrix4x4.h \
+		../src/layerdraw.h \
 		../src/loader.h \
 		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QThread \
 		../../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qthread.h \
@@ -889,6 +900,9 @@ layerdraw.o: ../src/layerdraw.cpp ../src/layerdraw.h \
 		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QBitmap \
 		../../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/qbitmap.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o layerdraw.o ../src/layerdraw.cpp
+
+buildspace.o: ../src/buildspace.cpp ../src/buildspace.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o buildspace.o ../src/buildspace.cpp
 
 qrc_gl.o: qrc_gl.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_gl.o qrc_gl.cpp

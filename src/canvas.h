@@ -56,6 +56,7 @@ private:
     void draw_mesh();
     QGLFormat formatGL();
 
+
     QMatrix4x4 transform_matrix() const;
     QMatrix4x4 view_matrix() const;
 

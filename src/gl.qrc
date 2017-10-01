@@ -4,5 +4,7 @@
         <file>gl/mesh.vert</file>
         <file>gl/quad.frag</file>
         <file>gl/quad.vert</file>
+        <file>gl/buildspace.vert</file>
+        <file>gl/buildspace.frag</file>
     </qresource>
 </RCC>

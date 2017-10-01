@@ -34,7 +34,8 @@ SOURCES += \
     glmesh.cpp \
     loader.cpp \
     mesh.cpp \
-    layerdraw.cpp
+    layerdraw.cpp \
+    buildspace.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -43,7 +44,8 @@ HEADERS += \
     glmesh.h \
     loader.h \
     mesh.h \
-    layerdraw.h
+    layerdraw.h \
+    buildspace.h
 
 FORMS += \
         mainwindow.ui

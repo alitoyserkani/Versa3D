@@ -34,6 +34,8 @@ void Backdrop::draw()
     const GLuint vp = shader.attributeLocation("vertex_position");
     const GLuint vc = shader.attributeLocation("vertex_color");
 
+    qDebug() << vp << vc;
+
     glEnableVertexAttribArray(vp);
     glEnableVertexAttribArray(vc);
 
