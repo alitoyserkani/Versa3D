@@ -2,6 +2,7 @@
 #define LAYERDRAW_H
 
 #include <QWidget>
+#include <QVector2D>
 
 class LayerDraw : public QWidget
 {
@@ -28,6 +29,9 @@ public:
 private:
     QVector<QVector<QPolygonF>> layerInfoList;
 
+    float zoom;
+    QVector2D translation;
+
     bool hasLayersLoaded;
 
     void drawBackground(); // add build settings into parameters later
@@ -38,11 +42,14 @@ private:
 
     QPoint mouse_pos;
 
+    void findInitialZoom();
+
 
 protected:
     //void paintEvent(QPaintEvent * e);
     void mousePressEvent(QMouseEvent * event);
     void mouseReleaseEvent(QMouseEvent * event);
+    void mouseMoveEvent(QMouseEvent * event);
 
 
 };

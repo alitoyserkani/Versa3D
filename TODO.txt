@@ -19,6 +19,7 @@ in order to have nicer code --> make a Painting engine so all 2D rendering can b
 
 having 2D build area in PaintEngine is a must
 
+translation will have imapct on bitmap formation
 PROBLEMS:
 
 bitmaps are being duplicated, layer 0 is producing 14000 bitmaps for some reason
@@ -33,3 +34,4 @@ FIx bugs:
 -When loading new STL mesh, svg's of previous parts may appear
 - fix rendering scaling and translation on paintengine
 -add tolerance to approximate to certain decimal place in UI
+

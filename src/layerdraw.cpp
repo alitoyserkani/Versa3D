@@ -16,6 +16,8 @@ LayerDraw::LayerDraw(QWidget *parent) :
     parent->setPalette(QPalette(QColor(Qt::gray)));
 
     hasLayersLoaded = false;
+    zoom = 1.0f;
+    //translation = QVector2D(0,0);
 
 }
 
@@ -36,8 +38,8 @@ void LayerDraw::paintEvent(QPaintEvent * e)
     if (hasLayersLoaded) {
         QPainter painter(this);
 
-        painter.scale(10,10);
-        painter.translate(7.5,7.5);
+        painter.translate(translation.x(), translation.y());
+        painter.scale(zoom,zoom);
 
         QPen linePen;
         linePen.setWidthF(0.25);
@@ -135,6 +137,7 @@ bool LayerDraw::loadData(QString SVGfilePath)
     }
     meshXMax = maxX; meshXMin = minX;
     meshYMax = maxY; meshYMin = minY;
+    findInitialZoom();
 
     hasLayersLoaded = true;
     return true;
@@ -153,7 +156,7 @@ bool LayerDraw::saveBitmapImages()
         QPainter painter(&pixmap);
         //BAD way, remove ASAPPPPPP
 
-        painter.scale(10,10);
+        painter.scale(zoom,zoom);
         painter.translate(7.5,7.5);
 
         QPen linePen;
@@ -249,6 +252,15 @@ QList<QImage> LayerDraw::segmentImage(QImage image, QSize printArea)
 
 }
 
+void LayerDraw::findInitialZoom()
+{
+    if (meshXMax - meshXMin > meshYMax - meshYMin) {
+        zoom = ((float) this->size().width()) / (1.5 * (meshXMax - meshXMin));
+    } else {
+        zoom = ((float) this->size().height()) / (1.5 * (meshYMax - meshYMin));
+    }
+}
+
 void LayerDraw::drawBackground()
 {
     //Draws build area from top view
@@ -277,8 +289,11 @@ void LayerDraw::drawBackground()
     infoPen.setColor(Qt::black);
     infoPen.setJoinStyle(Qt::MiterJoin);
     infoPainter.setPen(infoPen);
+    infoPainter.drawText(10,320, QString("Zoom:") + QString::number(zoom));
+    infoPainter.drawText(75,320,QString("TranslationX:") + QString::number(translation.x()) + "  " + QString("TranslationY:") + QString::number(translation.y()));
     infoPainter.drawText(10,335, QString("XMin:") + QString::number(meshXMin) + "  " + QString("XMax:") + QString::number(meshXMax));
     infoPainter.drawText(10,350, QString("YMin:") + QString::number(meshYMin) + "  " + QString("YMax:") + QString::number(meshYMax));
+
 }
 
 void LayerDraw::mousePressEvent(QMouseEvent * event)
@@ -298,6 +313,19 @@ void LayerDraw::mouseReleaseEvent(QMouseEvent *event)
     {
         unsetCursor();
     }
+}
+
+void LayerDraw::mouseMoveEvent(QMouseEvent *event)
+{
+    auto p = event->pos();
+    auto d = p - mouse_pos;
+
+    if ((event->buttons() & Qt::LeftButton) && hasLayersLoaded) {
+        translation += QVector2D(d);
+        mouse_pos = event->pos();
+        update();
+    }
+
 }
 
 

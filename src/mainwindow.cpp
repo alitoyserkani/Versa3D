@@ -359,6 +359,8 @@ bool MainWindow::load_stl(const QString& filename, bool is_reload)
     ui->svg_viewer->currLayer = ui->lineEdit->text().toInt();
     ui->svg_viewer->update();
     ui->verticalSlider->setMaximum(ui->svg_viewer->numLayers);
+
+    qDebug() << ui->svg_viewer->size();
     //draw layers onto svg widget
 
 //    ui->svg_viewer->meshXMin = ui->stl_viewer->getXMin();
