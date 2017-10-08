@@ -328,4 +328,19 @@ void LayerDraw::mouseMoveEvent(QMouseEvent *event)
 
 }
 
+void LayerDraw::wheelEvent(QWheelEvent *event)
+{
+    //TODO: Zooming should try to center picture incrementely
+
+    if (event->delta() < 0)
+    {
+        for (int i = 0; i > event->delta(); i--) zoom *= 1.001;
+    }
+    else if (event->delta() > 0)
+    {
+        for (int i = 0; i < event->delta(); i++) zoom /= 1.001;
+    }
+    update();
+}
+
 

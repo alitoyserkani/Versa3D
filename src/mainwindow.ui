@@ -111,6 +111,7 @@
                <attribute name="title">
                 <string>Infill</string>
                </attribute>
+               <layout class="QHBoxLayout" name="horizontalLayout_5"/>
               </widget>
               <widget class="QWidget" name="tab_2">
                <attribute name="title">
