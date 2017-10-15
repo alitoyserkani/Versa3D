@@ -50,6 +50,7 @@ public:
     LayerDraw *svg_viewer;
     QLabel *thicknessLabel;
     QWidget *tab_5;
+    QHBoxLayout *horizontalLayout_5;
     QWidget *tab_2;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
@@ -140,6 +141,10 @@ public:
         tabWidget->addTab(tab_1, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
+        horizontalLayout_5 = new QHBoxLayout(tab_5);
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
         tabWidget->addTab(tab_5, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
