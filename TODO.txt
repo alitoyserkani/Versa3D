@@ -1,4 +1,4 @@
-Things To Do:
+hings To Do:
 add xml functionality to main application
 
 change shader files based on stl file itself, no fixed shaders.
@@ -35,3 +35,7 @@ FIx bugs:
 - fix rendering scaling and translation on paintengine
 -add tolerance to approximate to certain decimal place in UI
 
+Scripting Engine TODO:
+-make intuitive UI.
+Step Editor should be intuitive
+Know when new process is being made, if a process is in edit mode or view mode etc etc
