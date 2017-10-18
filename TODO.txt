@@ -39,3 +39,4 @@ Scripting Engine TODO:
 -make intuitive UI.
 Step Editor should be intuitive
 Know when new process is being made, if a process is in edit mode or view mode etc etc
+-Save processes updates process file with links to templates
