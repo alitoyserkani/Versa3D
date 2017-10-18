@@ -40,3 +40,4 @@ Scripting Engine TODO:
 Step Editor should be intuitive
 Know when new process is being made, if a process is in edit mode or view mode etc etc
 -Save processes updates process file with links to templates
+-NOTE: current scripting engine is in edit form for which steps should be customizd/new steps added
