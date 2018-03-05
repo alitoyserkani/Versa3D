@@ -8,7 +8,7 @@ TreeView::TreeView(QObject *parent)
 {
     QVector<QVariant> rootData;
     QStringList headers;
-    headers << tr("Step") << tr("Description");
+    headers << tr("Variable") << tr("Value");
     foreach (QString header, headers)
         rootData << header;
 

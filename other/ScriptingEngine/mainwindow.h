@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QModelIndex>
+#include "process.h"
 
 namespace Ui {
 class MainWindow;
@@ -21,16 +22,24 @@ public:
     bool removeColumn();
     void removeRow();
     void updateActions();
+    void removeAllTreeView();
+    void addStepToProcess();
+    Process * currentProcess;
 
 
 private slots:
     void on_textEdit_textChanged();
 
-
     void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::MainWindow *ui;
+
+    bool editTriggered;
 };
 
 #endif // MAINWINDOW_H

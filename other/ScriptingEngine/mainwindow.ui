@@ -30,15 +30,15 @@
           <item>
            <widget class="QTabWidget" name="tabWidget_2">
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="tab_3">
              <attribute name="title">
               <string>Current Process</string>
              </attribute>
-             <layout class="QVBoxLayout" name="verticalLayout_2">
+             <layout class="QVBoxLayout" name="verticalLayout_3">
               <item>
-               <layout class="QVBoxLayout" name="verticalLayout">
+               <layout class="QVBoxLayout" name="verticalLayout_2">
                 <item>
                  <widget class="QLabel" name="label">
                   <property name="text">
@@ -47,7 +47,14 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QTreeView" name="treeView"/>
+                 <layout class="QVBoxLayout" name="verticalLayout">
+                  <item>
+                   <widget class="QTreeView" name="treeView_2"/>
+                  </item>
+                  <item>
+                   <widget class="QTreeView" name="treeView"/>
+                  </item>
+                 </layout>
                 </item>
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -83,6 +90,7 @@
              <zorder>pushButton</zorder>
              <zorder>pushButton_2</zorder>
              <zorder>pushButton_3</zorder>
+             <zorder>treeView_2</zorder>
             </widget>
             <widget class="QWidget" name="tab_4">
              <attribute name="title">

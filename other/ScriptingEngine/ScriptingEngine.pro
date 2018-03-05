@@ -28,13 +28,15 @@ SOURCES += \
         mainwindow.cpp \
     treeview.cpp \
     treeitem.cpp \
-    scripteditor.cpp
+    scripteditor.cpp \
+    process.cpp
 
 HEADERS += \
         mainwindow.h \
     treeview.h \
     treeitem.h \
-    scripteditor.h
+    scripteditor.h \
+    process.h
 
 FORMS += \
         mainwindow.ui
