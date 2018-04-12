@@ -1,8 +1,6 @@
 # Versa3D
 
-An intelligent 3D printer slicing software that improves process and machine paramters over builds, and works will all additive manufacturing methods, not only FDM, but SLA/DLP, SLS/SLM, BJ, etc. An included scripting engine will make it easy for custom machines to use the software, as well as allowing for a modular 3D printing platorm.
-
-This application is still under development by Ali Toyserkani. Executable versions for macOS, Windows 7+, and Linux distros (Ubuntu & Debian) will be available in soon for free usage. 
+An intelligent 3D printer slicing software that improves process and machine paramters over builds, and works will all additive manufacturing methods, not only FDM, but SLA/DLP, SLS/SLM, BJ, etc. An included scripting engine will make it easy for custom machines to use the software, as well as allowing for a modular 3D printing platorm. 
 
 Thank you to [Matt Keeter (mkeeter)](https://github.com/mkeeter) for providing an [excellent starting codebase](https://github.com/mkeeter/fstl) to allow me to easily begin on this application, without having to re-implement STL data loading.
 
